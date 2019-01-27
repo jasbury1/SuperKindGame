@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>95</y>
+      <w>135</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>superkind.SuperKindGameLauncher
+--
+--
++getName(): String
++run(args: List&lt;String) : boolean
++addUnitTests(List&lt;TestRunnable&gt;)
++printUsage()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>165</x>
+      <y>85</y>
+      <w>135</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+/others.GameLauncher/
+--
+--
+/+getName(): String/
+/+run(args: List&lt;String) : boolean/
+/+addUnitTests(List&lt;TestRunnable&gt;)/
+/+printUsage()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>75</y>
+      <w>195</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;180.0;190.0;180.0;190.0;10.0;370.0;10.0;370.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>200</y>
+      <w>115</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+/BoardVisitor/
+--
+--
+/+visitRudeDude(x, y)/
+/+visitSuperKind(x, y)/
+/+visitBackground(x, y)/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>355</x>
+      <y>195</y>
+      <w>125</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+/GameModel/
+--
+--
+/+attach(GameObserver o)/
+/+detach(GameObserver o)/
+/+getState() : GameState)/
+/+getBoardSize() : Size/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>170</x>
+      <y>265</y>
+      <w>140</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;final&gt;&gt;
+/GameMonitor/
+--
+-component:  JComponent
+-frame: JFrame
+--
+GameMonitor(String n, GameModel m)
++update()
++start()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>170</x>
+      <y>205</y>
+      <w>120</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+/GameObserver/
+--
+--
+/+update()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>235</y>
+      <w>15</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>295</x>
+      <y>235</y>
+      <w>70</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+observes &gt;</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>280</y>
+      <w>115</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+&lt;&lt;immutable&gt;&gt;
+/GameState/
+--
+--
++accept(BoardVisitor v)
++getGameOver() : boolean
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>285</x>
+      <y>215</y>
+      <w>80</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt; notifies
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>455</x>
+      <y>250</y>
+      <w>50</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+creates v</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>250</y>
+      <w>40</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;60.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>515</x>
+      <y>315</y>
+      <w>85</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>$Anonymous$
+--
+--
++visitRudeDude(x, y)
++visitSuperKind(x, y)
++visitBackground(x, y)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>575</x>
+      <y>250</y>
+      <w>15</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>325</y>
+      <w>315</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+uses &gt;</panel_attributes>
+    <additional_attributes>610.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>160</x>
+      <y>175</y>
+      <w>495</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>others.superkind
+--
+bg=#ffffcf</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>405</y>
+      <w>180</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>SuperKindModel
+-
+-observers: ArrayList&lt;GameObserver&gt;
+-gameOver: boolean
+-gameWon: boolean
+-GAME_SIZE: Size
+-tiles: GameTile[][]
+-gameLengthSeconds: double
+-numRudeDudes: int
+-
++initTiles()
++isUpdated(currentTime: double): boolean
++getState(): SuperKindState
++notifyObservers()
++attach(o: Observer)
++detach(o: Observer)
++getState: SuperKindState
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>375</x>
+      <y>250</y>
+      <w>15</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>115</x>
+      <y>210</y>
+      <w>225</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+uses ^</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0;10.0;430.0;430.0;430.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>405</y>
+      <w>115</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>SuperKindViewer
+-
+-model: SuperKindModel
+-window: SpriteWindow
+-frame: AnimationFrame
+-rudeDude: ImageTile
+-superKind: ImageTile
+-logo: ImageTile
+-
+-paintGameTile(x: int, y: int)
++init()
++run()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>505</x>
+      <y>435</y>
+      <w>55</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt; uses</panel_attributes>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>510</y>
+      <w>115</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>InputHandler
+-
+ganeModel: SuperKindModel
+-
++mouseClicked(x: int, y: int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>505</x>
+      <y>500</y>
+      <w>55</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt; updates</panel_attributes>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>345</x>
+      <y>590</y>
+      <w>135</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>GameTile
+-
+-changeTime: double
+-isClicked: double
+-String: tileType
+-
++setClicked()
++checkForClick(): boolean
++advanceState()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>530</y>
+      <w>50</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+creates v</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>445</y>
+      <w>165</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>SuperKindGame
+-
++TILE_SIZE: Size
+-gameLengthSeconds: double
+-gameModel: SuperKindModel
+-gameViewer: SuperKindViewer
+-
++loadImages()
++play(): boolean
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>370</y>
+      <w>410</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+creates &gt;</panel_attributes>
+    <additional_attributes>800.0;70.0;800.0;20.0;10.0;20.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>475</y>
+      <w>60</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+creates &gt;</panel_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>515</x>
+      <y>605</y>
+      <w>125</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>SuperKindState
+-
+model: SuperKindModel
+-
+accept(v:BoardVisitor)
+getGameOver(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>295</y>
+      <w>220</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;420.0;10.0;420.0;720.0;280.0;720.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>595</x>
+      <y>330</y>
+      <w>115</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+uses ^</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0;160.0;610.0;90.0;610.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>485</x>
+      <y>530</y>
+      <w>60</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+creates &gt;</panel_attributes>
+    <additional_attributes>100.0;150.0;100.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
